@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "temp": "ansible",
+        "vector": "cpp",
+        "ostream": "cpp"
+    }
+}
