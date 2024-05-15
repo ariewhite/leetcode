@@ -8,7 +8,17 @@ public:
     /*
         x -> integer number
         y -> y ** y =~ x   =>
-                            log y(x) =~ 2
+                            log y(x) =~ 2 
+
+        binary search:
+        low = 1; high = x; y = &high;
+        mid = (low + (high - low )) / 2
+
+        if mid * mid == x => return mid;
+        else if mid * mid < x => low = mid + 1;
+        else if mid * mid > x => high = mid - 1;
+
+        return high;
 
     */
     int mySqrt(int x) {
