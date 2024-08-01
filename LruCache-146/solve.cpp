@@ -5,6 +5,7 @@
 class BrowserHistory
 {    
 public:
+    
     BrowserHistory(std::string homepage)
     {
         Node * node = new Node(homepage);
@@ -53,34 +54,24 @@ public:
         return curr->value;
     }
 
-    Node * curr;
-};
+private:
+    class Node
+    {
+    public:
+        std::string value;
 
+        Node * next;
+        Node * prev;
 
-class Node
-{
+        Node(std::string val) : value(val) 
+        {
+            this->next = NULL;
+            this->prev = NULL;
+        }  
+    };
+    
 public:
-    std::string value;
-
-    Node * next;
-    Node * prev;
-
-    Node(std::string val) : value(val) 
-    {
-        this->next = NULL;
-        this->prev = NULL;
-    }  
-    Node(std::string val, Node & nxt) : value(val)
-    {
-        this->next = &nxt;
-        this->prev = NULL;
-    }
-    Node()
-    {
-        value = nullptr;
-        this->next = NULL;
-        this->prev = NULL;
-    }
+    Node * curr;
 };
 
 
